@@ -107,40 +107,8 @@ p, label, [data-testid="stMarkdownContainer"] {font-family:'DM Sans','Segoe UI',
 [data-testid="stForm"] {border:0!important;padding:.5rem 0!important;}
 [data-testid="stAlert"]{border-radius:12px!important;}
 [data-testid="stExpander"] {border:1px solid var(--line)!important;border-radius:13px!important;background:#fff;}
-[data-testid="stChatMessage"] {
-  background:#ffffff !important;
-  border-radius:16px !important;
-  border:1px solid var(--line) !important;
-  padding:1rem !important;
-  margin:0 0 .7rem !important;
-  color:#233326 !important;
-}
-
-/* Texto das mensagens do chat */
-[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"],
-[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] *,
-[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p,
-[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] span,
-[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] li,
-[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] strong {
-  color:#233326 !important;
-  -webkit-text-fill-color:#233326 !important;
-  opacity:1 !important;
-  font-size:.85rem;
-  line-height:1.6;
-}
-
-/* Links dentro da resposta */
-[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] a {
-  color:#5f8fe0 !important;
-  -webkit-text-fill-color:#5f8fe0 !important;
-  opacity:1 !important;
-}
-
-/* Ajuste do avatar/ícone para não "lavar" a leitura */
-[data-testid="stChatMessage"] [data-testid="stChatMessageAvatar"] {
-  opacity:1 !important;
-}
+[data-testid="stChatMessage"] {background:#fff!important;border-radius:16px!important;border:1px solid var(--line);padding:1rem!important;margin:0 0 .7rem;}
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p{font-size:.85rem;line-height:1.6;}
 [data-testid="stHorizontalBlock"] {gap:1rem;}
 .st-key-hero-doc-btn button,.st-key-hero-onboard-btn button{width:100%;}
 /* CORREÇÃO DE CONTRASTE — campos de busca, seleção e conteúdo documental.
@@ -377,6 +345,39 @@ ul[data-testid="stSelectboxVirtualDropdown"],
 .ds-pagehead h1{font-size:2.3rem;}
 .ds-captionbar{display:block;line-height:1.8;}
 [data-testid="stHorizontalBlock"]{gap:.6rem;}
+}
+/* CONTRASTE DO CHAT — correção localizada para o onboarding.
+   O Streamlit pode usar stChatMessageContent e stMarkdown, em vez
+   de stMarkdownContainer. Esta regra afeta só mensagens do chat. */
+[data-testid="stChatMessage"],
+[data-testid="stChatMessageContent"],
+[data-testid="stChatMessageContent"] [data-testid="stMarkdown"],
+[data-testid="stChatMessageContent"] [data-testid="stMarkdownContainer"],
+[data-testid="stChatMessageContent"] .stMarkdown {
+  background-color: #ffffff !important;
+  color: #233326 !important;
+  -webkit-text-fill-color: #233326 !important;
+  opacity: 1 !important;
+  color-scheme: light;
+}
+/* Texto da pergunta, resposta e formatação Markdown. */
+[data-testid="stChatMessageContent"] :is(p, span, div, li, strong, em, b, i, h1, h2, h3, h4, blockquote),
+[data-testid="stChatMessage"] [data-testid="stMarkdown"] :is(p, span, div, li, strong, em, b, i, h1, h2, h3, h4, blockquote),
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] :is(p, span, div, li, strong, em, b, i, h1, h2, h3, h4, blockquote),
+.stChatMessage .stMarkdown :is(p, span, div, li, strong, em, b, i, h1, h2, h3, h4, blockquote) {
+  color: #233326 !important;
+  -webkit-text-fill-color: #233326 !important;
+  opacity: 1 !important;
+  line-height: 1.65;
+}
+/* Links mantêm contraste e identificação visual. */
+[data-testid="stChatMessageContent"] a,
+[data-testid="stChatMessage"] [data-testid="stMarkdown"] a,
+.stChatMessage .stMarkdown a {
+  color: #245e8f !important;
+  -webkit-text-fill-color: #245e8f !important;
+  text-decoration: underline !important;
+  opacity: 1 !important;
 }
 </style>
 """
