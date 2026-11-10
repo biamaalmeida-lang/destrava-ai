@@ -73,7 +73,10 @@ p, label, [data-testid="stMarkdownContainer"] {font-family:'DM Sans','Segoe UI',
 .ds-feature h3{font-weight:800;font-size:1.08rem;letter-spacing:-.045em;margin:0 0 .42rem;color:#233326;}
 .ds-feature p{font-size:.82rem;color:#778177;line-height:1.58;margin:0;max-width:380px;}
 .ds-feature.green p{color:#667a69;}
-.ds-card-callout{border:1px solid var(--line);border-radius:19px;padding:1.2rem 1.45rem;background:#fff;}
+.ds-card-callout{border:1px solid var(--line);border-radius:19px;padding:1.2rem 1.45rem;background:#fff;color:#233326!important;}
+.ds-card-callout .ds-pic-name{color:#233326!important;}
+.ds-card-callout .ds-section-text{color:#4d5f51!important;opacity:1!important;}
+.ds-card-callout .ds-pill{color:#3e5c46!important;}
 .ds-small-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:#869084;font-weight:800;margin-bottom:.5rem;}
 .ds-pic-row{display:flex;align-items:center;gap:.8rem;padding:.8rem 0;border-bottom:1px solid #e9ede7;}
 .ds-pic-row:last-child{border-bottom:0;}
