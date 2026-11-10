@@ -1,0 +1,4 @@
+LUME — ROTINA E COMUNICAÇÃO (documento fictício)
+O time de Marketing organiza suas tarefas no Trello. Cada tarefa deve conter objetivo, responsável e prazo acordado com a liderança.
+Decisões importantes devem ser registradas na descrição da tarefa. Para pedir ajuda, a pessoa deve primeiro consultar o material da equipe e, se necessário, conversar com a liderança.
+Reuniões de alinhamento ocorrem conforme o calendário interno; este documento não determina dias ou horários fixos.

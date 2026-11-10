@@ -1,0 +1,3 @@
+LUME — REEMBOLSOS (documento fictício)
+Gastos de trabalho precisam ser previamente autorizados pela liderança. Para solicitar reembolso, registre o valor, a finalidade do gasto e o comprovante em uma tarefa do Trello identificada como "Reembolso".
+A liderança revisa a solicitação e encaminha ao financeiro. Este procedimento não informa prazo de pagamento nem limite de valor. Em caso de dúvida, consulte Pessoas e Cultura pelo contato pessoas@lume.example (fictício).

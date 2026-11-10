@@ -1,0 +1,4 @@
+LUME — ACESSOS E FERRAMENTAS (documento fictício)
+A Lume usa Google Workspace para e-mail e arquivos, Trello para tarefas e um canal interno de mensagens para comunicação de equipe.
+A nova pessoa deve solicitar acessos à liderança, informando nome, equipe e ferramentas necessárias. A liderança autoriza o pedido e encaminha ao responsável por tecnologia.
+Nunca compartilhe senhas em mensagens. Quando um acesso falhar, informe o nome da ferramenta e a mensagem de erro à liderança. Este documento não define prazo fixo de liberação.

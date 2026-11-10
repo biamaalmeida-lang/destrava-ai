@@ -1,0 +1,4 @@
+LUME — BOAS-VINDAS (documento fictício)
+A Lume é uma pequena empresa de serviços digitais com 15 colaboradores. Seus times são Marketing, Atendimento e Operações. A cultura valoriza comunicação clara, colaboração e registro das decisões.
+No primeiro dia, a pessoa recém-contratada recebe apoio do time de Pessoas e Cultura. O contato interno para dúvidas de integração é pessoas@lume.example. Esse endereço é fictício.
+As políticas desta biblioteca são simuladas e usadas somente na demonstração do Destrava AI.
