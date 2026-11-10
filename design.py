@@ -107,8 +107,40 @@ p, label, [data-testid="stMarkdownContainer"] {font-family:'DM Sans','Segoe UI',
 [data-testid="stForm"] {border:0!important;padding:.5rem 0!important;}
 [data-testid="stAlert"]{border-radius:12px!important;}
 [data-testid="stExpander"] {border:1px solid var(--line)!important;border-radius:13px!important;background:#fff;}
-[data-testid="stChatMessage"] {background:#fff!important;border-radius:16px!important;border:1px solid var(--line);padding:1rem!important;margin:0 0 .7rem;}
-[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p{font-size:.85rem;line-height:1.6;}
+[data-testid="stChatMessage"] {
+  background:#ffffff !important;
+  border-radius:16px !important;
+  border:1px solid var(--line) !important;
+  padding:1rem !important;
+  margin:0 0 .7rem !important;
+  color:#233326 !important;
+}
+
+/* Texto das mensagens do chat */
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"],
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] *,
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p,
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] span,
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] li,
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] strong {
+  color:#233326 !important;
+  -webkit-text-fill-color:#233326 !important;
+  opacity:1 !important;
+  font-size:.85rem;
+  line-height:1.6;
+}
+
+/* Links dentro da resposta */
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] a {
+  color:#5f8fe0 !important;
+  -webkit-text-fill-color:#5f8fe0 !important;
+  opacity:1 !important;
+}
+
+/* Ajuste do avatar/ícone para não "lavar" a leitura */
+[data-testid="stChatMessage"] [data-testid="stChatMessageAvatar"] {
+  opacity:1 !important;
+}
 [data-testid="stHorizontalBlock"] {gap:1rem;}
 .st-key-hero-doc-btn button,.st-key-hero-onboard-btn button{width:100%;}
 /* CORREÇÃO DE CONTRASTE — campos de busca, seleção e conteúdo documental.
