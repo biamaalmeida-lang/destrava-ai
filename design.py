@@ -221,13 +221,50 @@ p, label, [data-testid="stMarkdownContainer"] {font-family:'DM Sans','Segoe UI',
   stroke: #3b5946 !important;
   opacity: 1 !important;
 }
-/* Menu de opções renderizado fora do contêiner do widget. */
+/* Correção pontual do MENU ABERTO em "Documento selecionado".
+   A lista e' renderizada fora do stSelectbox (portal para <body>).
+   O menu recebia fundo escuro mesmo com o campo fechado correto. */
+ul[data-testid="stSelectboxVirtualDropdown"],
 [data-testid="stSelectboxVirtualDropdown"],
-[data-testid="stSelectboxVirtualDropdown"] *,
-[role="listbox"] [role="option"] {
+[data-testid="stSelectboxVirtualDropdown"] [role="listbox"],
+[data-baseweb="popover"],
+[data-baseweb="popover"] [role="listbox"] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #233326 !important;
+  color-scheme: light;
+  border-color: #dfe6dc !important;
+}
+/* Cada opcao, incluindo o texto interno, permanece legivel. */
+[data-testid="stSelectboxVirtualDropdown"] li,
+[data-testid="stSelectboxVirtualDropdown"] [role="option"],
+[data-baseweb="popover"] [role="option"] {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   color: #233326 !important;
   -webkit-text-fill-color: #233326 !important;
   opacity: 1 !important;
+}
+[data-testid="stSelectboxVirtualDropdown"] li :is(span, div, p),
+[data-testid="stSelectboxVirtualDropdown"] [role="option"] :is(span, div, p),
+[data-baseweb="popover"] [role="option"] :is(span, div, p) {
+  color: #233326 !important;
+  -webkit-text-fill-color: #233326 !important;
+  opacity: 1 !important;
+}
+/* Hover, foco via teclado e opcao selecionada: verde muito claro. */
+[data-testid="stSelectboxVirtualDropdown"] li:hover,
+[data-testid="stSelectboxVirtualDropdown"] li[aria-selected="true"],
+[data-testid="stSelectboxVirtualDropdown"] li[data-focused="true"],
+[data-testid="stSelectboxVirtualDropdown"] [role="option"]:hover,
+[data-testid="stSelectboxVirtualDropdown"] [role="option"][aria-selected="true"],
+[data-testid="stSelectboxVirtualDropdown"] [role="option"][data-highlighted],
+[data-baseweb="popover"] [role="option"]:hover,
+[data-baseweb="popover"] [aria-selected="true"] {
+  background: #e7eee7 !important;
+  background-color: #e7eee7 !important;
+  color: #203a2f !important;
+  -webkit-text-fill-color: #203a2f !important;
 }
 /* A nova versão do file_uploader tem um botão "Upload" próprio,
    não recebe as regras de estilo dos botões comuns do aplicativo. */
