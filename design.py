@@ -73,10 +73,7 @@ p, label, [data-testid="stMarkdownContainer"] {font-family:'DM Sans','Segoe UI',
 .ds-feature h3{font-weight:800;font-size:1.08rem;letter-spacing:-.045em;margin:0 0 .42rem;color:#233326;}
 .ds-feature p{font-size:.82rem;color:#778177;line-height:1.58;margin:0;max-width:380px;}
 .ds-feature.green p{color:#667a69;}
-.ds-card-callout{border:1px solid var(--line);border-radius:19px;padding:1.2rem 1.45rem;background:#fff;color:#233326!important;}
-.ds-card-callout .ds-pic-name{color:#233326!important;}
-.ds-card-callout .ds-section-text{color:#4d5f51!important;opacity:1!important;}
-.ds-card-callout .ds-pill{color:#3e5c46!important;}
+.ds-card-callout{border:1px solid var(--line);border-radius:19px;padding:1.2rem 1.45rem;background:#fff;}
 .ds-small-label{font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:#869084;font-weight:800;margin-bottom:.5rem;}
 .ds-pic-row{display:flex;align-items:center;gap:.8rem;padding:.8rem 0;border-bottom:1px solid #e9ede7;}
 .ds-pic-row:last-child{border-bottom:0;}
@@ -114,6 +111,56 @@ p, label, [data-testid="stMarkdownContainer"] {font-family:'DM Sans','Segoe UI',
 [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p{font-size:.85rem;line-height:1.6;}
 [data-testid="stHorizontalBlock"] {gap:1rem;}
 .st-key-hero-doc-btn button,.st-key-hero-onboard-btn button{width:100%;}
+/* CORREÇÃO DE CONTRASTE — campos de busca, seleção e conteúdo documental.
+   Streamlit pode herdar cores de tema escuro em campos com fundo branco. */
+[data-testid="stTextInput"] input,
+[data-testid="stTextArea"] textarea {
+  background-color: #ffffff !important;
+  color: #233326 !important;
+  -webkit-text-fill-color: #233326 !important;
+  caret-color: #233326 !important;
+  opacity: 1 !important;
+  color-scheme: light;
+}
+[data-testid="stTextInput"] input::placeholder,
+[data-testid="stTextArea"] textarea::placeholder {
+  color: #5b685f !important;
+  -webkit-text-fill-color: #5b685f !important;
+  opacity: 1 !important;
+}
+/* O documento é somente leitura; o estado disabled não deve apagar o texto. */
+[data-testid="stTextArea"] textarea:disabled,
+[data-testid="stTextArea"] textarea[disabled],
+[data-testid="stTextArea"] [data-baseweb="textarea"],
+[data-testid="stTextArea"] [data-baseweb="textarea"] > div {
+  color: #233326 !important;
+  -webkit-text-fill-color: #233326 !important;
+  opacity: 1 !important;
+}
+/* Texto da opção selecionada e seta do seletor. */
+[data-testid="stSelectbox"] [data-baseweb="select"] > div {
+  background-color: #ffffff !important;
+  color: #233326 !important;
+  color-scheme: light;
+}
+[data-testid="stSelectbox"] [data-baseweb="select"] div,
+[data-testid="stSelectbox"] [data-baseweb="select"] span,
+[data-testid="stSelectbox"] [data-baseweb="select"] input {
+  color: #233326 !important;
+  -webkit-text-fill-color: #233326 !important;
+  opacity: 1 !important;
+}
+[data-testid="stSelectbox"] [data-baseweb="select"] svg {
+  color: #435849 !important;
+  fill: #435849 !important;
+}
+/* Lista que abre ao clicar em Documento selecionado. */
+[data-baseweb="popover"] [role="listbox"],
+[data-baseweb="popover"] [role="option"] {
+  background-color: #ffffff !important;
+  color: #233326 !important;
+  -webkit-text-fill-color: #233326 !important;
+}
 /* mobile */
 @media(max-width:780px){
 [data-testid="stMainBlockContainer"],.block-container{padding:.9rem 1.1rem 2rem!important;}
