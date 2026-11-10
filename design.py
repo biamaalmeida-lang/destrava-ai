@@ -154,6 +154,25 @@ p, label, [data-testid="stMarkdownContainer"] {font-family:'DM Sans','Segoe UI',
   color: #435849 !important;
   fill: #435849 !important;
 }
+/* Garantia adicional para o campo "Documento selecionado".
+   O valor visível pode ser desenhado em divs internas do BaseWeb,
+   e não em um input. Abrangemos esses elementos e não só o input. */
+[data-testid="stSelectbox"],
+[data-testid="stSelectbox"] [data-baseweb="select"],
+[data-testid="stSelectbox"] [data-baseweb="select"] *,
+[data-testid="stSelectbox"] [role="combobox"],
+[data-testid="stSelectbox"] [role="combobox"] * {
+  opacity: 1 !important;
+  color: #233326 !important;
+  -webkit-text-fill-color: #233326 !important;
+}
+[data-testid="stSelectbox"] [data-baseweb="select"] svg,
+[data-testid="stSelectbox"] [data-baseweb="select"] svg path {
+  color: #435849 !important;
+  fill: #435849 !important;
+  stroke: #435849 !important;
+  opacity: 1 !important;
+}
 /* Lista que abre ao clicar em Documento selecionado. */
 [data-baseweb="popover"] [role="listbox"],
 [data-baseweb="popover"] [role="option"] {
@@ -161,6 +180,115 @@ p, label, [data-testid="stMarkdownContainer"] {font-family:'DM Sans','Segoe UI',
   color: #233326 !important;
   -webkit-text-fill-color: #233326 !important;
 }
+/* ST-2026-COMPONENT-CONTRAST
+   Streamlit 1.59+ usa react-aria no selectbox (sem data-baseweb="select").
+   Estilos anteriores para BaseWeb permanecem para compatibilidade. */
+[data-testid="stSelectbox"],
+[data-testid="stSelectbox"] [role="combobox"],
+[data-testid="stSelectbox"] input,
+[data-testid="stSelectbox"] button,
+[data-testid="stSelectbox"] [data-slot="input"],
+.st-key-selected_doc [role="combobox"],
+.st-key-selected_doc input {
+  color: #233326 !important;
+  -webkit-text-fill-color: #233326 !important;
+  opacity: 1 !important;
+  color-scheme: light;
+}
+/* O valor selecionado pode estar dentro de uma tag interna de texto. */
+[data-testid="stSelectbox"] :is(span, p, [data-testid="stMarkdownContainer"]),
+.st-key-selected_doc :is(span, p) {
+  color: #233326 !important;
+  -webkit-text-fill-color: #233326 !important;
+  opacity: 1 !important;
+}
+[data-testid="stSelectbox"] input::placeholder,
+.st-key-selected_doc input::placeholder {
+  color: #55675b !important;
+  -webkit-text-fill-color: #55675b !important;
+  opacity: 1 !important;
+}
+[data-testid="stSelectbox"] [role="combobox"],
+[data-testid="stSelectbox"] input,
+.st-key-selected_doc [role="combobox"],
+.st-key-selected_doc input {
+  background-color: #ffffff !important;
+  caret-color: #233326 !important;
+}
+[data-testid="stSelectbox"] svg,
+.st-key-selected_doc svg {
+  color: #3b5946 !important;
+  stroke: #3b5946 !important;
+  opacity: 1 !important;
+}
+/* Menu de opções renderizado fora do contêiner do widget. */
+[data-testid="stSelectboxVirtualDropdown"],
+[data-testid="stSelectboxVirtualDropdown"] *,
+[role="listbox"] [role="option"] {
+  color: #233326 !important;
+  -webkit-text-fill-color: #233326 !important;
+  opacity: 1 !important;
+}
+/* A nova versão do file_uploader tem um botão "Upload" próprio,
+   não recebe as regras de estilo dos botões comuns do aplicativo. */
+[data-testid="stFileUploader"] button,
+[data-testid="stFileUploader"] button[kind],
+[data-testid="stFileUploader"] [data-testid="stBaseButton-secondary"],
+[data-testid="stFileUploaderDropzone"] button,
+.st-key-upload_docs button {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #203a2f !important;
+  -webkit-text-fill-color: #203a2f !important;
+  border: 1px solid #526858 !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+  color-scheme: light;
+}
+[data-testid="stFileUploader"] button:hover,
+[data-testid="stFileUploader"] button:focus-visible,
+.st-key-upload_docs button:hover {
+  background-color: #e9efe7 !important;
+  color: #203a2f !important;
+  -webkit-text-fill-color: #203a2f !important;
+  border-color: #203a2f !important;
+}
+[data-testid="stFileUploader"] button :is(span, p, div),
+.st-key-upload_docs button :is(span, p, div) {
+  color: #203a2f !important;
+  -webkit-text-fill-color: #203a2f !important;
+  opacity: 1 !important;
+}
+[data-testid="stFileUploader"] button svg,
+.st-key-upload_docs button svg {
+  color: #203a2f !important;
+  stroke: #203a2f !important;
+  opacity: 1 !important;
+}
+/* Legenda "200MB per file • TXT, MD" e instruções da área de upload. */
+[data-testid="stFileUploaderDropzoneInstructions"],
+[data-testid="stFileUploaderDropzoneInstructions"] *,
+[data-testid="stFileUploader"] small,
+[data-testid="stFileUploader"] section :is(span, p, small),
+.st-key-upload_docs small {
+  color: #596a5e !important;
+  -webkit-text-fill-color: #596a5e !important;
+  opacity: 1 !important;
+}
+/* A legenda recebe cinza suave, mas o texto do botão permanece escuro. */
+[data-testid="stFileUploader"] section button :is(span, p, div),
+.st-key-upload_docs section button :is(span, p, div) {
+  color: #203a2f !important;
+  -webkit-text-fill-color: #203a2f !important;
+  opacity: 1 !important;
+}
+/* Mantém o botão claramente visível mesmo quando não há hover. */
+[data-testid="stFileUploader"] section {
+  background: #ffffff !important;
+  color-scheme: light;
+}
+
 /* mobile */
 @media(max-width:780px){
 [data-testid="stMainBlockContainer"],.block-container{padding:.9rem 1.1rem 2rem!important;}
